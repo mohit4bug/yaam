@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+@layer base {
+  :root {
+    --background: 40 12% 96%;
+    --foreground: 30 8% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 8% 12%;
+    --primary: 28 8% 18%;
+    --primary-foreground: 40 20% 98%;
+    --secondary: 36 14% 92%;
+    --secondary-foreground: 30 10% 22%;
+    --muted: 36 12% 92%;
+    --muted-foreground: 30 8% 46%;
+    --accent: 34 20% 88%;
+    --accent-foreground: 30 14% 24%;
+    --destructive: 4 72% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 34 12% 84%;
+    --input: 34 12% 90%;
+    --ring: 30 10% 28%;
+    --chart-1: 20 96% 53%;
+    --chart-2: 172 62% 42%;
+    --chart-3: 46 98% 48%;
+    --chart-4: 10 86% 58%;
+    --chart-5: 342 84% 55%;
+    --sidebar: 40 14% 94%;
+    --sidebar-foreground: 30 8% 14%;
+    --sidebar-primary: 28 8% 18%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 36 14% 90%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 34 12% 84%;
+    --sidebar-ring: 30 10% 28%;
+    --radius: 0.3125rem;
+    --radius-sm: 0.125rem;
+    --radius-md: 0.1875rem;
+    --radius-lg: 0.25rem;
+    --radius-xl: 0.3125rem;
+    --sidebar-w: 240px;
+    --app-bg: transparent;
+    --sidebar-bg: transparent;
+    --main-bg: hsl(var(--card) / 0.58);
+    --output-bg: hsl(var(--card) / 0.74);
+    --line: hsl(var(--border) / 0.7);
+    --text: hsl(var(--foreground));
+    --text-muted: hsl(var(--muted-foreground));
+    --text-dim: hsl(var(--muted-foreground) / 0.82);
+    --accent-subtle: hsl(var(--accent) / 0.34);
+    --row-hover: hsl(var(--accent) / 0.42);
+    --row-active: hsl(var(--accent) / 0.55);
+    --active-indicator: hsl(var(--primary) / 0.8);
+    --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono-font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 30 6% 10%;
+    --foreground: 36 12% 90%;
+    --card: 30 6% 14%;
+    --card-foreground: 36 12% 90%;
+    --popover: 30 6% 14%;
+    --popover-foreground: 36 12% 90%;
+    --primary: 40 16% 90%;
+    --primary-foreground: 30 8% 14%;
+    --secondary: 30 6% 20%;
+    --secondary-foreground: 36 10% 88%;
+    --muted: 30 6% 24%;
+    --muted-foreground: 34 8% 66%;
+    --accent: 34 12% 24%;
+    --accent-foreground: 36 12% 90%;
+    --destructive: 4 74% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 6% 28%;
+    --input: 30 6% 22%;
+    --ring: 40 14% 74%;
+    --chart-1: 20 98% 66%;
+    --chart-2: 172 66% 56%;
+    --chart-3: 46 99% 61%;
+    --chart-4: 10 90% 68%;
+    --chart-5: 342 88% 67%;
+    --sidebar: 30 6% 12%;
+    --sidebar-foreground: 36 12% 90%;
+    --sidebar-primary: 40 16% 90%;
+    --sidebar-primary-foreground: 30 8% 14%;
+    --sidebar-accent: 30 6% 20%;
+    --sidebar-accent-foreground: 36 10% 88%;
+    --sidebar-border: 30 6% 28%;
+    --sidebar-ring: 40 14% 74%;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: none;
+    box-shadow: none;
+  }
+
+  :where(button, input, textarea, select, a, [role="button"], [tabindex]:not([tabindex="-1"])):is(
+      :focus,
+      :focus-visible
+    ) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+#root {
+  height: 100%;
+}

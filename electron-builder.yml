@@ -1,0 +1,56 @@
+appId: com.lunaria.activitymonitor
+productName: Activity Monitor
+directories:
+  buildResources: build
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+extraMetadata:
+  main: ./out/main/index.js
+asar: true
+asarUnpack:
+  - resources/**
+artifactName: ${name}-${version}-${os}-${arch}.${ext}
+mac:
+  icon: build/icon.icns
+  category: public.app-category.utilities
+  target:
+    - target: dmg
+      arch:
+        - universal
+    - target: zip
+      arch:
+        - universal
+  entitlementsInherit: build/entitlements.mac.plist
+  notarize: false
+win:
+  icon: build/icon.ico
+  executableName: activity-monitor
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - arm64
+    - target: portable
+      arch:
+        - x64
+        - arm64
+linux:
+  icon: build/icon.png
+  category: Utility
+  target:
+    - target: AppImage
+      arch:
+        - x64
+        - arm64
+    - target: deb
+      arch:
+        - x64
+        - arm64
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  artifactName: ${name}-${version}-setup-${arch}.${ext}
+npmRebuild: false
